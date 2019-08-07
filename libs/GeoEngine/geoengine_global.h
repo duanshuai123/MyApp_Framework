@@ -1,0 +1,12 @@
+#ifndef GEOENGINE_GLOBAL_H
+#define GEOENGINE_GLOBAL_H
+
+#include <QtCore/qglobal.h>
+
+#if defined(GEOENGINE_LIBRARY)
+#  define GEOENGINESHARED_EXPORT Q_DECL_EXPORT
+#else
+#  define GEOENGINESHARED_EXPORT Q_DECL_IMPORT
+#endif
+
+#endif // GEOENGINE_GLOBAL_H
