@@ -39,7 +39,10 @@ void Dialog::slotOnTimeOutPut()
    iii++;
    geoEngine* pGeoEngine = geoEngine::Instance();
    QString strLabel = "process is %" + QString::number(iii);
-   pGeoEngine->slotProcessAndLabel(iii,strLabel);
+//定时器每割200毫秒，调用一次GeoEngine的槽函数slotProcessAndLabel，在槽函数里激发sigProcessAndLabel信号，
+//凡是与该信号绑定的都会响应，而Dialog的构造函数里（11-12行），信号绑定了slotChangeProcessAndLabel,改变滚动条与label的值
+//其核心就是利用geoEngine进行消息传递，因为geoEngine各个库各个类都可以访问，是个稳定不变的单例。
+   pGeoEngine->slotProcessAndLabel(iii,strLabel); 
    if(iii==100)
        iii = 0;
 }
