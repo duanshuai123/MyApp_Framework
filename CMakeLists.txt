@@ -3,6 +3,8 @@ cmake_policy(PUSH)
 
 project( Project_Framework )
 
+add_compile_options(-std=c++11 -std=c++14 -std=c++17)
+
 include( cmake/CMakePolicies.cmake )
 include( cmake/CMakeSetCompilerOptions.cmake )
 include( cmake/CMakeInclude.cmake )
@@ -60,6 +62,7 @@ include( contrib/AllSupport.cmake )
 # by duan这些依赖上面的子文件夹中的库，需要放到它们后面，否则可能编不过
 add_subdirectory( libs/GeoEngine )
 add_subdirectory( libs/Form )
+add_subdirectory( libs/leetcode )
 add_subdirectory( applications )
 
 cmake_policy(POP)
