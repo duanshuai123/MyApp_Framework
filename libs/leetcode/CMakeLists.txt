@@ -13,6 +13,13 @@ file( GLOB header_list
 file( GLOB source_list *.cpp *.cc
     ./LeetCode101/leetcode_101/chapter_5/*.cpp
     ./LeetCode101/leetcode_101/chapter_4/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_6/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_7/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_8/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_9/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_10/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_11/*.cpp
+#    ./LeetCode101/leetcode_101/chapter_12/*.cpp
     )
 
 add_library( ${PROJECT_NAME} SHARED ${header_list} ${source_list})
